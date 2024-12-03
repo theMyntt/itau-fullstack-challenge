@@ -40,6 +40,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Data", "src\Adapters\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infra.Data.Tests", "tests\Adapters\Driven\Infra.Data.Tests\Infra.Data.Tests.csproj", "{DA37632F-841D-4DB4-BF79-21E3F9835D33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentations", "src\Adapters\Driving\Presentations\Presentations.csproj", "{99AF6A32-7924-4ADE-935A-3F772F24A5B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentations.Tests", "tests\Adapters\Driving\Presentations.Tests\Presentations.Tests.csproj", "{61ECF197-EB6A-4943-B1C7-C72E2286BFF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +74,14 @@ Global
 		{DA37632F-841D-4DB4-BF79-21E3F9835D33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA37632F-841D-4DB4-BF79-21E3F9835D33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA37632F-841D-4DB4-BF79-21E3F9835D33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99AF6A32-7924-4ADE-935A-3F772F24A5B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99AF6A32-7924-4ADE-935A-3F772F24A5B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99AF6A32-7924-4ADE-935A-3F772F24A5B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99AF6A32-7924-4ADE-935A-3F772F24A5B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61ECF197-EB6A-4943-B1C7-C72E2286BFF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61ECF197-EB6A-4943-B1C7-C72E2286BFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61ECF197-EB6A-4943-B1C7-C72E2286BFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61ECF197-EB6A-4943-B1C7-C72E2286BFF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,5 +101,7 @@ Global
 		{66889A5F-1915-479C-9968-A04127DD36D9} = {F19EC9C2-698C-4CB1-9C38-A686741449EA}
 		{56208937-D58F-431D-9811-560B3A6DE316} = {462C0C0D-DA7F-40CF-986C-9FF85B34C818}
 		{DA37632F-841D-4DB4-BF79-21E3F9835D33} = {04AA7707-C59E-43FD-8122-4E922EFA56C3}
+		{99AF6A32-7924-4ADE-935A-3F772F24A5B0} = {23E043B9-3AE3-4ABF-918E-1A6AF7044797}
+		{61ECF197-EB6A-4943-B1C7-C72E2286BFF2} = {962555FE-86CA-4CB0-A196-D1B26455E37A}
 	EndGlobalSection
 EndGlobal
