@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Validators
 {
-    internal class GenericDomainValidator
+    public class GenericDomainValidator
     {
         private GenericDomainValidator() { }
 
