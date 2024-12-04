@@ -1,4 +1,5 @@
 using Presentations.Components;
+using Infra.Ioc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 builder.Services.AddControllers();
+builder.Services.AddExtensions(builder.Configuration);
 
 var app = builder.Build();
 
