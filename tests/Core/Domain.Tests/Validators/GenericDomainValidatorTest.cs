@@ -12,24 +12,24 @@ namespace Domain.Tests.Validators
         [Fact]
         public void ShouldGiveMeAnError()
         {
-            var exception = Assert.Throws<Exception>(() => GenericDomainValidator.When(false, new Exception("Mock error")));
+            var exception = Assert.Throws<Exception>(() => GenericDomainValidator.When(true, new Exception("Mock error")));
             Assert.Equal("Mock error", exception.Message);
         }
 
         [Fact]
         public void ShouldGiveSuccess()
         {
-            var exception = true;
+            var exception = false;
             try
             {
-                GenericDomainValidator.When(true, new Exception("Mock error"));
+                GenericDomainValidator.When(false, new Exception("Mock error"));
             }
             catch (Exception)
             {
-                exception = false;
+                exception = true;
             }
 
-            Assert.True(exception);
+            Assert.False(exception);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Domain.Validators
 
         public static void When(bool condition, Exception e)
         {
-            if (!condition)
+            if (condition)
                 throw e;
         }
     }
