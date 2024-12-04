@@ -22,6 +22,7 @@ namespace Domain.Entities
             FirstName = firstName;
             LastName = lastName;
             CreatedAt = createdAt ?? DateTime.UtcNow;
+            Participation = participation;
         }
 
         public static ClientEntity Build(string firstName, string lastName, int participation, Guid? id = null, DateTime? createdAt = null)
