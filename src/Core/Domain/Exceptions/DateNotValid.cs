@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Domain.Exceptions
 {
-    internal class DateNotValid() : Exception("Date is not valid");
+    public class DateNotValid() : Exception("Date is not valid");
 }
