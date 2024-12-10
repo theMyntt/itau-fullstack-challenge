@@ -1,4 +1,5 @@
 ﻿using Application.Abstractions;
+using Application.UseCases;
 using Infra.Data.Abstractions;
 using Infra.Data.Context;
 using Infra.Data.Repositories;
@@ -34,6 +35,7 @@ namespace Infra.Ioc
         {
             services.AddScoped<IClientMapper, ClientMapper>();
             services.AddScoped<IClientRepository, ClientRepository>();
+            services.AddScoped<ICreateClientUseCase, CreateClientUseCase>();
 
             return services;
         }
