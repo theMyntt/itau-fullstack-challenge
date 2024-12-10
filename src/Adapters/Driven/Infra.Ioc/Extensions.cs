@@ -1,4 +1,7 @@
-﻿using Infra.Data.Context;
+﻿using Application.Abstractions;
+using Infra.Data.Abstractions;
+using Infra.Data.Context;
+using Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +13,7 @@ namespace Infra.Ioc
         public static IServiceCollection AddExtensions(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDatabaseContext(configuration);
+            services.AddAdaptors();
 
             return services;
         }
@@ -22,6 +26,14 @@ namespace Infra.Ioc
                 connectionString,
                 m => m.MigrationsAssembly(typeof(DatabaseContext).Assembly.FullName)
                 ));
+
+            return services;
+        }
+
+        public static IServiceCollection AddAdaptors(this IServiceCollection services)
+        {
+            services.AddScoped<IClientMapper, ClientMapper>();
+            services.AddScoped<IClientRepository, ClientRepository>();
 
             return services;
         }
