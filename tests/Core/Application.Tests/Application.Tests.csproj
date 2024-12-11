@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\src\Adapters\Driven\Infra.Data\Infra.Data.csproj" />
     <ProjectReference Include="..\..\..\src\Core\Application\Application.csproj" />
   </ItemGroup>
 
