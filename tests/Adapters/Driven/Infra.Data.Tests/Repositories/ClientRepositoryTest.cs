@@ -64,7 +64,7 @@ namespace Infra.Data.Tests.Repositories
                 var entity = ClientEntity.Build(
                     firstName: "GABRIEL",
                     lastName: "ARAÚJO LIMA",
-                    participation: 50);
+                    participation: 1);
 
                 await _repository.AddClientAsync(entity);
                 entities.Add(entity);
@@ -85,6 +85,19 @@ namespace Infra.Data.Tests.Repositories
                 Assert.Equal(entity.Participation, contextResult.Participation);
                 Assert.Equal(entity.CreatedAt, contextResult.CreatedAt);
             }
+        }
+
+        [Fact]
+        public async Task ShouldThrowInvalidOperationIfSumOfParticipationIsGreatherThanOneHundred()
+        {
+            var entity = ClientEntity.Build(
+                firstName: "GABRIEL",
+                lastName: "ARAÚJO LIMA",
+                participation: 70);
+
+            await _repository.AddClientAsync(entity);
+            var exception = await Assert.ThrowsAsync<InvalidOperationException>(() => _repository.AddClientAsync(entity));
+            Assert.Equal("The sum of participations cannot be greater than 100", exception.Message);
         }
     }
 }
