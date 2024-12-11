@@ -26,6 +26,11 @@ namespace Infra.Data.Repositories
         {
             var model = _mapper.ToPersistance(entity);
 
+            var participation = await _context.Clients.SumAsync(c => c.Participation);
+
+            if (participation + entity.Participation > 100)
+                throw new InvalidOperationException("The sum of participations cannot be greater than 100");
+
             await _context.Clients.AddAsync(model);
             await _context.SaveChangesAsync();
 

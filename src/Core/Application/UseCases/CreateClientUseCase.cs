@@ -33,6 +33,10 @@ namespace Application.UseCases
             {
                 return StandardResponseEntity.Build(message: e.Message, statusCode: 400);
             }
+            catch (InvalidOperationException e)
+            {
+                return StandardResponseEntity.Build(message: e.Message, statusCode: 400);
+            }
             catch (Exception e)
             {
                 return StandardResponseEntity.Build(message: "Internal Server Error", statusCode: 500);
