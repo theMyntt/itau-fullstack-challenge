@@ -1,0 +1,18 @@
+﻿<input type="text" @bind="Text" @oninput="OnTextChanged" placeholder="@Placeholder" class="input-component"/>
+
+@code {
+	[Parameter]
+	public string Text { get; set; } = string.Empty;
+
+	[Parameter]
+	public string Placeholder { get; set; } = string.Empty;
+
+	[Parameter]
+	public EventCallback<string> TextChanged { get; set; }
+
+	private void OnTextChanged(ChangeEventArgs e)
+	{
+		Text = e.Value != null ? nameof(e.Value) : string.Empty;
+		TextChanged.InvokeAsync(Text);
+	}
+}

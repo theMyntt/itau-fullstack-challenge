@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.input-component {
+    background-color: white;
+    border-radius: 3px;
+    border: 0;
+    padding: 20px;
+    min-width: 250px;
+}
+
+    .input-component:focus {
+        outline: none;
+    }
