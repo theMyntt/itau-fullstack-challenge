@@ -41,6 +41,3 @@ The provided layout should be developed using the libraries and frameworks you a
 
 The layout includes a form, a table with percentage participation information, and a pie chart representing this distribution. You need to create APIs that send and receive this information. In case of inconsistency, return the error in a structured JSON with HTTP 400 code. Tests are welcome.
 
-## Contact
-
-If you have any questions, send them directly to dev@cubo.network or open an issue in the repository.
