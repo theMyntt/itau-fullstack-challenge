@@ -1,0 +1,15 @@
+﻿body {
+}
+
+header {
+    background-color: lightskyblue;
+    padding: 20px 0;
+    display: flex;
+}
+
+.header-container {
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
