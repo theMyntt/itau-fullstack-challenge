@@ -1,0 +1,27 @@
+﻿@using Presentations.Models
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Participation</th>
+		</tr>
+	</thead>
+	<tbody>
+		@for (var i = 0; i < Clients.Count(); i++)
+		{
+			<tr>
+				<td>@(i + 1)</td>
+				<td>@Clients.ElementAt(i).FirstName</td>
+				<td>@Clients.ElementAt(i).LastName</td>
+				<td>@Clients.ElementAt(i).Participation%</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+@code {
+	[Parameter]
+	public IEnumerable<ClientModel> Clients { get; set; } = [];
+}
