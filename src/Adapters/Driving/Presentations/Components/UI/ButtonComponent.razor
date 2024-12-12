@@ -1,0 +1,24 @@
+﻿<button @onclick="Clicked" type="@TypeToString" class="button-component">@Text.ToUpper()</button>
+
+@code {
+	[Parameter]
+	public string Text { get; set; } = string.Empty;
+
+	[Parameter]
+	public EventCallback Clicked { get; set; }
+
+	[Parameter]
+	public ButtonType Type { get; set; } = ButtonType.Button;
+
+	public enum ButtonType {
+		Submit, 
+		Button
+	} 
+
+	private string TypeToString => Type switch
+	{
+		ButtonType.Submit => "submit",
+		ButtonType.Button => "button",
+		_ => "button"
+	};
+}
