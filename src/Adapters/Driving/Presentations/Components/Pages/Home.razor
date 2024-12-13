@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using Presentations.Components.UI
+@using Presentations.Models
 
 <PageTitle>Home</PageTitle>
 
@@ -11,7 +12,27 @@
 		<ButtonComponent Text="Send"></ButtonComponent>
 	</div>
 </header>
+<div class="main-container">
+	<div class="brand-content">
+		<h1>DATA</h1>
+		<p>Loem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	</div>
+	<div class="graphs">
+		<TableComponent Clients="Clients"></TableComponent>
+	</div>
+</div>
 
-<h1>Hello, world!</h1>
+@code {
+	private IEnumerable<ClientModel> Clients { get; set; } = [];
 
-Welcome to your new app.
+	protected override void OnInitialized()
+	{
+		Clients = new List<ClientModel>
+		{
+			new ClientModel { FirstName = "John", LastName = "Doe", Participation = 25 },
+			new ClientModel { FirstName = "Jane", LastName = "Doe", Participation = 50 },
+			new ClientModel { FirstName = "Alice", LastName = "Doe", Participation = 75 },
+		};
+	}
+}
+

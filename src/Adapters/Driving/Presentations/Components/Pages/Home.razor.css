@@ -13,3 +13,16 @@ header {
     width: 70%;
     margin: 0 20%;
 }
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 70%;
+    margin: 50px 20%;
+}
+
+.brand-content {
+    width: 100%;
+    text-align: center;
+}
