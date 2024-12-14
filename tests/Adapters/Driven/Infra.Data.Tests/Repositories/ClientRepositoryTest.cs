@@ -99,5 +99,24 @@ namespace Infra.Data.Tests.Repositories
             var exception = await Assert.ThrowsAsync<InvalidOperationException>(() => _repository.AddClientAsync(entity));
             Assert.Equal("The sum of participations cannot be greater than 100", exception.Message);
         }
+
+        [Fact]
+        public async Task ShouldCountItemsOnTable()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                var entity = ClientEntity.Build(
+                    firstName: "GABRIEL",
+                    lastName: "ARAÚJO LIMA",
+                    participation: 1);
+
+                await _repository.AddClientAsync(entity);
+            }
+            await _context.SaveChangesAsync();
+
+            var itemsCount = await _repository.CountAsync();
+
+            Assert.Equal(5, itemsCount);
+        }
     }
 }
