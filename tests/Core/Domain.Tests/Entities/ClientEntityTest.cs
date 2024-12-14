@@ -66,7 +66,7 @@ namespace Domain.Tests.Entities
         [Fact]
         public void ShouldThrowDateNotValid()
         {
-            Assert.Throws<DateNotValid>(() =>
+            Assert.Throws<DateNotValidException>(() =>
             {
                 ClientEntity.Build(_firstName, _lastName, 30, createdAt: DateTime.UtcNow.AddDays(2));
             });
