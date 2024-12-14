@@ -12,12 +12,14 @@ namespace Application.DTOs
         public class Input
         {
             [Required]
+            [RegularExpression(@"^\S*$", ErrorMessage = "First name cannot contain spaces.")]
             public required string FirstName { get; set; }
 
             [Required]
             public required string LastName { get; set; }
 
             [Required]
+            [Range(1, 100)]
             public int Participation { get; set; }
         }
     }
