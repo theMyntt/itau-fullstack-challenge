@@ -36,6 +36,7 @@ namespace Infra.Ioc
             services.AddScoped<IClientMapper, ClientMapper>();
             services.AddScoped<IClientRepository, ClientRepository>();
             services.AddScoped<ICreateClientUseCase, CreateClientUseCase>();
+            services.AddScoped<IGetClientsUseCase, GetClientsUseCase>();
 
             return services;
         }
