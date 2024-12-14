@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Domain.Exceptions
 {
-    public class ParticipationNotValid() : Exception("Participation needs to be >= 1 and <= 100");
+    public class ParticipationNotValidException() : Exception("Participation needs to be >= 1 and <= 100");
 }

@@ -12,14 +12,14 @@ namespace Domain.Tests.Exceptions
         [Fact]
         public async Task ShouldThrow()
         {
-            var exception = await Assert.ThrowsAsync<ParticipationNotValid>(() => throw new ParticipationNotValid());
-            Assert.IsType<ParticipationNotValid?>(exception);
+            var exception = await Assert.ThrowsAsync<ParticipationNotValidException>(() => throw new ParticipationNotValidException());
+            Assert.IsType<ParticipationNotValidException?>(exception);
         }
 
         [Fact]
         public async Task ShouldHaveCorrectMessage()
         {
-            var exception = await Assert.ThrowsAsync<ParticipationNotValid>(() => throw new ParticipationNotValid());
+            var exception = await Assert.ThrowsAsync<ParticipationNotValidException>(() => throw new ParticipationNotValidException());
             Assert.Equal("Participation needs to be >= 1 and <= 100", exception.Message);
         }
     }

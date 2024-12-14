@@ -57,7 +57,7 @@ namespace Domain.Tests.Entities
         [Fact]
         public void ShouldThrowParticipationNotValid()
         {
-            Assert.Throws<ParticipationNotValid>(() =>
+            Assert.Throws<ParticipationNotValidException>(() =>
             {
                 ClientEntity.Build(_firstName, _lastName, -1);
             });

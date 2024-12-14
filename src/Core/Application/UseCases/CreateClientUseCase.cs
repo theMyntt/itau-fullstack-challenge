@@ -29,7 +29,7 @@ namespace Application.UseCases
 
                 return StandardResponseEntity.Build(message: "Created.", statusCode: 201);
             }
-            catch (ParticipationNotValid e)
+            catch (ParticipationNotValidException e)
             {
                 return StandardResponseEntity.Build(message: e.Message, statusCode: 400);
             }

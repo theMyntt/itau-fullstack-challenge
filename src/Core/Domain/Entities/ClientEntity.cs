@@ -36,7 +36,7 @@ namespace Domain.Entities
 
         private static void ValidateDomain(ClientEntity entity)
         {
-            GenericDomainValidator.When(entity.Participation < 1 || entity.Participation > 100, new ParticipationNotValid());
+            GenericDomainValidator.When(entity.Participation < 1 || entity.Participation > 100, new ParticipationNotValidException());
             GenericDomainValidator.When(entity.CreatedAt > DateTime.UtcNow, new DateNotValidException());
         }
     }
