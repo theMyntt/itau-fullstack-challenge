@@ -11,5 +11,6 @@ namespace Application.Abstractions
     {
         Task<ClientEntity> AddClientAsync(ClientEntity entity);
         Task<IEnumerable<ClientEntity>> GetClientsAsync(int page);
+        Task<int> CountAsync();
     }
 }

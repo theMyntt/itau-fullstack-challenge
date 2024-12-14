@@ -37,6 +37,11 @@ namespace Infra.Data.Repositories
             return entity;
         }
 
+        public async Task<int> CountAsync()
+        {
+            return await _context.Clients.CountAsync();
+        }
+
         public async Task<IEnumerable<ClientEntity>> GetClientsAsync(int page)
         {
             return await _context.Clients
